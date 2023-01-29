@@ -8,6 +8,7 @@ This is a guided project part of the Scrimba Frontend Path. The main objective o
     Source: [How to Write a Git Commit Message](https://cbea.ms/git-commit/#why-not-how)
 - I intend to write functions according to single responsibility principle.
 - I intend to make the code as readable as I can make it.
+- I indent optimize modularity of the code.
 
 ## About the Project
 
