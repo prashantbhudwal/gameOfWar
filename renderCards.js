@@ -4,13 +4,14 @@ const getCardImageUrl = function getCardImageFromJson(card) {
 
 const getCardHtml = function getCardHtmlTemplateString(card) {
   const imageUrl = getCardImageUrl(card);
-  const cardHtml = `<img src="${imageUrl}" alt="Drawn Card">`;
+  const cardHtml = `<img src="${imageUrl}" class="card" alt="Drawn Card">`;
   return cardHtml;
 };
 
 const renderCards = function renderCardImageOnScreen(cardsArray, element) {
-  console.log(cardsArray);
+  element.innerHTML = "";
   cardsArray.forEach((card) => {
+    console.log(card);
     element.innerHTML += getCardHtml(card);
   });
 };
