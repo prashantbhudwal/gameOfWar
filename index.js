@@ -30,11 +30,3 @@ const drawCardsHandler = () =>
 elements.getDeckBtn.addEventListener("click", newDeckHandler);
 
 elements.drawCardsBtn.addEventListener("click", drawCardsHandler);
-
-/**
- * Challenge:
- *
- * Display the images of the 2 cards you drew in the browser.
- * Probably best to use `innerHTML` to insert a couple <img> elements
- * on the page.
- */
