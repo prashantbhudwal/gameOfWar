@@ -1,5 +1,5 @@
 const logIt = function logAnything(prompt) {
-  console.log(prompt);
+  return console.log(prompt);
 };
 
 const getJson = function (data) {
