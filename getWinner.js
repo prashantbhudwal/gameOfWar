@@ -5,7 +5,7 @@ const getIntFromMatrix = function getValueFromConversionMatrix(value) {
     QUEEN: 12,
     KING: 13,
     JACK: 11,
-    ACE: 15,
+    ACE: 14,
   };
   return conversionMatrix[value];
 };
@@ -18,11 +18,8 @@ const convertValueToInt = function convertCardValueToIntegers(element) {
   }
 };
 
-const getValueArray = function getArrayOfCardValues(cardsArray) {
-  let ValueArray = [];
-  cardsArray.forEach((element) => {
-    ValueArray.push(convertValueToInt(element));
-  });
+const getValueArray = function (cardsArray) {
+  let ValueArray = cardsArray.map(convertValueToInt);
   return ValueArray;
 };
 
