@@ -27,6 +27,8 @@ const drawCardsHandler = () =>
     .then(getJson)
     .then((json) => renderCards(json.cards, elements.cardsContainer));
 
+// newDeckHandler().then(drawCardsHandler);
+
 elements.getDeckBtn.addEventListener("click", newDeckHandler);
 
 elements.drawCardsBtn.addEventListener("click", drawCardsHandler);
