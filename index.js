@@ -1,17 +1,22 @@
-import DeckApi from "./DeckApi.js";
 import { getCards, getNewDeck, getDeckId } from "./deckLogic.js";
 import { logIt, getJson } from "./utils.js";
 
+const elements = {
+  getDeckBtn: document.getElementById("get-new-deck-btn"),
+  drawCardsBtn: document.getElementById("draw-cards-btn"),
+};
+
 const numberOfCards = 2;
 
-getNewDeck()
-  .then(getJson)
-  .then((deck) => getCards(deck, numberOfCards))
-  .then(getJson)
-  .then(logIt);
+const drawCardsHandler = () =>
+  getNewDeck()
+    .then(getJson)
+    .then((deck) => getCards(deck, numberOfCards))
+    .then(getJson)
+    .then(logIt);
 
-const clickHandler = () => getNewDeck().then(getJson).then(logIt);
+const newDeckHandler = () => getNewDeck().then(getJson).then(logIt);
 
-document
-  .getElementById("fetch-cards-btn")
-  .addEventListener("click", clickHandler);
+elements.getDeckBtn.addEventListener("click", newDeckHandler);
+
+elements.drawCardsBtn.addEventListener("click", drawCardsHandler);
