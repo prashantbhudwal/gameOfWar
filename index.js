@@ -1,4 +1,5 @@
 import { getCards, getNewDeck } from "./getNewDeck.js";
+import { getWinner } from "./getWinner.js";
 import { renderCards } from "./renderCards.js";
 import { logIt, getJson } from "./utils.js";
 
@@ -13,22 +14,24 @@ const enableButton = function () {
 };
 const numberOfCards = 2;
 
-let newDeck;
+let deck;
+let currentCardArray;
 
 const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
-    .then((json) => (newDeck = json))
+    .then((json) => (deck = json))
     .then(logIt)
     .then(enableButton());
 
 const drawCardsHandler = () =>
-  getCards(newDeck, numberOfCards)
+  getCards(deck, numberOfCards)
     .then(getJson)
-    .then((json) => renderCards(json.cards, elements.cardsContainer));
-
-// newDeckHandler().then(drawCardsHandler);
-
+    .then((json) => {
+      renderCards(json.cards, elements.cardsContainer);
+      return json.cards;
+    })
+    .then(getWinner);
 elements.getDeckBtn.addEventListener("click", newDeckHandler);
 
 elements.drawCardsBtn.addEventListener("click", drawCardsHandler);
