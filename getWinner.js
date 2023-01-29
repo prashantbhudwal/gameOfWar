@@ -1,5 +1,3 @@
-import { logIt } from "./utils.js";
-
 const getIntFromMatrix = function getValueFromConversionMatrix(value) {
   const conversionMatrix = {
     QUEEN: 12,
@@ -11,29 +9,25 @@ const getIntFromMatrix = function getValueFromConversionMatrix(value) {
 };
 
 const convertValueToInt = function convertCardValueToIntegers(element) {
-  if (element.value > 0 || element.value < 11) {
-    return parseInt(element.value);
-  } else {
-    return getIntFromMatrix(element.value);
-  }
+  return element > 0 || element < 11
+    ? parseInt(element)
+    : getIntFromMatrix(element);
 };
 
-const getValueArray = function (cardsArray) {
-  let ValueArray = cardsArray.map(convertValueToInt);
-  return ValueArray;
-};
+const getIntegerArray = (cardsArray) => cardsArray.map(convertValueToInt);
+const getValueArray = (cardsArray) => cardsArray.map((card) => card.value);
 
 const compareCards = function (userCard, computerCard) {
   return userCard === computerCard
-    ? null
+    ? "draw"
     : userCard > computerCard
-    ? userCard
-    : computerCard;
+    ? "user"
+    : "computer";
 };
+
 const getWinner = function getWinningCard(cardsArray) {
-  let [userCardValue, computerCardValue] = getValueArray(cardsArray);
-  let winner = compareCards(userCardValue, computerCardValue);
-  winner === userCardValue ? logIt("userWins") : logIt("computerWins");
+  const [userCard, computerCard] = getIntegerArray(getValueArray(cardsArray));
+  const winner = compareCards(userCard, computerCard);
   return winner;
 };
 
