@@ -1,4 +1,4 @@
-import DeckApi from "./DeckApi.js";
+import DeckApi from "./deckApiConfig.js";
 
 const getNewDeck = function fetchADeckOfCardsFromAPI() {
   const url = DeckApi.getNewDeckEndpoint();
