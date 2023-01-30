@@ -1,35 +1,28 @@
+import { elements, setDrawButton } from "./DomElements.js";
 import { getCards, getNewDeck } from "./getNewDeck.js";
 import { getWinner } from "./getWinner.js";
 import { renderCards } from "./renderCards.js";
 import { renderWinner } from "./renderWinner.js";
 import { logIt, getJson } from "./utils.js";
 
-const elements = {
-  getDeckBtn: document.getElementById("get-new-deck-btn"),
-  drawCardsBtn: document.getElementById("draw-cards-btn"),
-  cardsContainer: document.getElementById("cards-container"),
-  winContainer: document.getElementById("win-container"),
-};
-elements.drawCardsBtn.disabled = true;
-const enableButton = function () {
-  return (elements.drawCardsBtn.disabled = false);
-};
-const numberOfCards = 2;
+setDrawButton("disabled");
+
+const cardsToBeDrawn = 2;
 
 let deck;
+
 const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
     .then((json) => (deck = json))
     .then(logIt)
-    .then(enableButton());
+    .then(setDrawButton("enabled"));
 
 const drawCardsHandler = () =>
-  getCards(deck, numberOfCards)
+  getCards(deck, cardsToBeDrawn)
     .then(getJson)
     .then((json) => {
       renderCards(json.cards, elements.cardsContainer);
-      console.log(json);
       return json.cards;
     })
     .then(getWinner)
