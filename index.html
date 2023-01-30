@@ -3,18 +3,23 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="win-container" class="win-container">
-      <p class="win-placeholder win-message">
-        This is War! Shuffle your decks.
-      </p>
-    </div>
+    <header>
+      <div class="score user-score" id="user-score">🧑‍💻 0</div>
+      <div id="win-container" class="win-container">
+        <p class="win-placeholder win-message">
+          🤖 are coming! Shuffle. Win. Save the world.
+        </p>
+        </div>
+        <div class="score computer-score" id="computer-score">🤖 0</div>
+      </div>
+    </header>
     <div id="cards-container" class="cards-container">
       <div class="placeholder-card card"></div>
       <div class="placeholder-card card"></div>
     </div>
     <div class="btn-container">
       <button id="get-new-deck-btn" class="get-new-deck-btn btn">
-        Shuffle
+       Shuffle
       </button>
       <button id="draw-cards-btn" class="draw-cards-btn btn">Draw Cards</button>
     </div>

@@ -10,6 +10,7 @@ body {
   padding: 0;
   font-size: 16px;
   background-color: rgb(30 41 59);
+  background: linear-gradient(to bottom, rgb(15 23 42), rgb(30 41 59));
   text-align: center;
   box-sizing: border-box;
 }
@@ -31,6 +32,9 @@ body {
 
 .cards-container :first-child {
   box-shadow: 0px 25px 50px -10px #e879f9;
+}
+.cards-container :nth-child(2) {
+  box-shadow: 0px 25px 50px -10px #be185d;
 }
 
 .card {
@@ -70,8 +74,8 @@ body {
 
 .get-new-deck-btn {
   font-size: 2vw;
-  background-color: #52525b;
-  color: white;
+  background-color: rgb(15 23 42);
+  color: silver;
 }
 
 .placeholder-card {
@@ -80,24 +84,50 @@ body {
 }
 
 /* Win */
+header {
+  margin: 0.3em;
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2rem;
+  color: #e2e8f0;
+}
 
 .win-message {
-  color: #e2e8f0;
-  border-radius: 0.5 em;
-  width: 100vw;
-  font-size: 2rem;
-  padding: 0.5em;
+  width: 100%;
   background: #047857;
+  padding: 0.5em;
+  width: 70vw;
+  border-radius: 1em;
 }
 
 .user-wins {
   background: #c026d3;
+  box-shadow: 0px 10px 22px -11px #c026d3;
 }
 
 .computer-wins {
   background: #be185d;
+  box-shadow: 0px 10px 22px -11px #be185d;
 }
 
 .draw-wins {
-  background: #44403c;
+  background: rgb(30 41 59);
+  box-shadow: 0px 10px 22px -11px rgb(30 41 59);
+}
+
+.score {
+  padding: 0.5em 1em;
+  background-color: rgb(15 23 42);
+  border-radius: 1em;
+  box-shadow: 0px 10px 22px -11px rgb(15 23 42);
+}
+
+.user-score {
+  box-shadow: 0px 10px 22px -11px #c026d3;
+}
+
+.computer-score {
+  box-shadow: 0px 10px 22px -11px #be185d;
 }
