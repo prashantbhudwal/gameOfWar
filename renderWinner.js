@@ -1,7 +1,7 @@
 const winningMessage = {
   user: "😀 You Win!",
-  computer: "🙁 Computer Wins!",
-  draw: "😱 It's a Draw!",
+  computer: "🤖 ScrimBot Wins!",
+  draw: "😱 Whoa! A RARE Draw!",
 };
 
 const getWinMessageHtml = function (winner) {
