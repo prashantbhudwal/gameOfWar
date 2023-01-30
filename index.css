@@ -11,6 +11,7 @@ body {
   font-size: 16px;
   background-color: rgb(30 41 59);
   text-align: center;
+  box-sizing: border-box;
 }
 
 body {
@@ -76,4 +77,27 @@ body {
 .placeholder-card {
   min-width: 22vw;
   min-height: 31vw;
+}
+
+/* Win */
+
+.win-message {
+  color: #e2e8f0;
+  border-radius: 0.5 em;
+  width: 100vw;
+  font-size: 2rem;
+  padding: 0.5em;
+  background: #047857;
+}
+
+.user-wins {
+  background: #c026d3;
+}
+
+.computer-wins {
+  background: #be185d;
+}
+
+.draw-wins {
+  background: #44403c;
 }
