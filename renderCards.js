@@ -10,6 +10,7 @@ const getCardHtml = function getCardHtmlTemplateString(card) {
 
 const renderCards = function renderCardImageOnScreen(cardsArray, element) {
   element.innerHTML = "";
+  console.log(cardsArray);
   cardsArray.forEach((card) => {
     console.log(card);
     element.innerHTML += getCardHtml(card);

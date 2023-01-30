@@ -4,20 +4,17 @@ import { getWinner } from "./getWinner.js";
 import { renderCards } from "./renderCards.js";
 import { renderWinner } from "./renderWinner.js";
 import { logIt, getJson } from "./utils.js";
+const cardsToBeDrawn = 2;
+let deck;
 
 setDrawButton("disabled");
-
-const cardsToBeDrawn = 2;
-
-let deck;
 
 const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
-    .then((json) => (deck = json))
-    .then(logIt)
+    .then((jsonDeck) => (deck = jsonDeck))
     .then(setDrawButton("enabled"));
-
+// TODO Refactor this monstrosity
 const drawCardsHandler = () =>
   getCards(deck, cardsToBeDrawn)
     .then(getJson)
