@@ -1,4 +1,4 @@
-const logIt = function logAnything(prompt) {
+const logIt = function logAnything(prompt = "Works!!") {
   return console.log(prompt);
 };
 
