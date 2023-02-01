@@ -12,6 +12,9 @@ const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
     .then((jsonDeck) => (deck = jsonDeck))
+    .then((drawnCardsJson) =>
+      renderRemainingCards(drawnCardsJson, elements.remainingCardsContainer)
+    )
     .then(displayActionArea())
     .then(clearRenderedCards(elements.cardsContainer));
 // TODO Refactor this monstrosity
