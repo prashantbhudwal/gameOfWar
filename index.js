@@ -1,4 +1,4 @@
-import { elements, displayActionArea } from "./DomElements.js";
+import { elements, startGame } from "./DomElements.js";
 import { getCards, getNewDeck } from "./getNewDeck.js";
 import { getWinner } from "./getWinner.js";
 import { renderCards, clearRenderedCards } from "./renderCards.js";
@@ -15,7 +15,7 @@ const newDeckHandler = () =>
     .then((drawnCardsJson) =>
       renderRemainingCards(drawnCardsJson, elements.remainingCardsContainer)
     )
-    .then(displayActionArea())
+    .then(startGame())
     .then(clearRenderedCards(elements.cardsContainer));
 // TODO Refactor this monstrosity
 const drawCardsHandler = () =>

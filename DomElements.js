@@ -10,7 +10,7 @@ const elements = {
 elements.remainingCardsContainer.style.display = "none";
 elements.drawCardsBtn.style.display = "none";
 
-const displayActionArea = function () {
+const startGame = function () {
   elements.remainingCardsContainer.style.display = "block";
   elements.drawCardsBtn.style.display = "block";
   elements.getDeckBtn.innerText = "Reshuffle";
@@ -19,4 +19,4 @@ const displayActionArea = function () {
   elements.cardsContainer.classList.add("drawn");
 };
 
-export { elements, displayActionArea };
+export { elements, startGame };
