@@ -13,6 +13,7 @@ const displayActionArea = function () {
   elements.remainingCardsContainer.style.display = "block";
   elements.drawCardsBtn.style.display = "block";
   elements.getDeckBtn.innerText = "Reshuffle";
+  elements.cardsContainer.classList.add("drawn");
 };
 
 export { elements, displayActionArea };

@@ -16,8 +16,8 @@ const renderCards = function renderCardImageOnScreen(cardsArray, element) {
 };
 
 const clearRenderedCards = function (element) {
-  element.innerHTML = `<div class="placeholder-card card"></div>
-      <div class="placeholder-card card"></div>`;
+  element.innerHTML = `<img src="assets/back.png" class="card" alt="Drawn Card">
+     <img src="assets/back.png" class="card" alt="Drawn Card">`;
 };
 
 export { renderCards, clearRenderedCards };
