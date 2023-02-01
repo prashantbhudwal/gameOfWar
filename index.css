@@ -14,6 +14,7 @@ body {
   background: linear-gradient(to bottom, rgb(15 23 42), rgb(30 41 59));
   text-align: center;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -56,7 +57,6 @@ body {
 }
 
 .base {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 3vw;
   padding: 1vw 2vw;
   border-radius: 0.5vw 0.5vw;
@@ -101,7 +101,8 @@ header {
 
 .win-message {
   width: 100%;
-  background: #047857;
+  color: #171717;
+  background: linear-gradient(to bottom, #d97706, #f59e0b);
   padding: 0.5em;
   width: 70vw;
   border-radius: 1em;
@@ -110,16 +111,19 @@ header {
 .user-wins {
   background: #c026d3;
   box-shadow: 0px 10px 22px -11px #c026d3;
+  color: whitesmoke;
 }
 
 .computer-wins {
   background: #be185d;
   box-shadow: 0px 10px 22px -11px #be185d;
+  color: whitesmoke;
 }
 
 .draw-wins {
   background: rgb(30 41 59);
   box-shadow: 0px 10px 22px -11px rgb(30 41 59);
+  color: whitesmoke;
 }
 
 .score {
