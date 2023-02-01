@@ -1,9 +1,14 @@
-import { elements, setDrawButton } from "./DomElements.js";
+import {
+  elements,
+  setDrawButton,
+  displayRemainingCards,
+} from "./DomElements.js";
 import { getCards, getNewDeck } from "./getNewDeck.js";
 import { getWinner } from "./getWinner.js";
 import { renderCards } from "./renderCards.js";
 import { renderWinner } from "./renderWinner.js";
 import { logIt, getJson } from "./utils.js";
+import renderRemainingCards from "./renderRemainingCards.js";
 const cardsToBeDrawn = 2;
 let deck;
 
@@ -13,14 +18,16 @@ const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
     .then((jsonDeck) => (deck = jsonDeck))
-    .then(setDrawButton("enabled"));
+    .then(setDrawButton("enabled"))
+    .then(displayRemainingCards());
 // TODO Refactor this monstrosity
 const drawCardsHandler = () =>
   getCards(deck, cardsToBeDrawn)
     .then(getJson)
-    .then((json) => {
-      renderCards(json.cards, elements.cardsContainer);
-      return json.cards;
+    .then((drawnCardsJson) => {
+      renderCards(drawnCardsJson.cards, elements.cardsContainer);
+      renderRemainingCards(drawnCardsJson, elements.remainingCardsContainer);
+      return drawnCardsJson.cards;
     })
     .then(getWinner)
     .then((winner) => renderWinner(winner, elements.winContainer));

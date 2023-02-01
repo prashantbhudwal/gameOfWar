@@ -1,3 +1,4 @@
+/* BUG The scroll bars appears on fullscreen. */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -46,20 +47,36 @@ body {
   min-height: 28vw;
 }
 
-.btn-container {
+.action-bar {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  gap: 2vh;
+  gap: 3vw;
 }
 
-.btn {
+.base {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 3vw;
   padding: 1vw 2vw;
   border-radius: 0.5vw 0.5vw;
   border: none;
+}
+.remaining-cards,
+.get-new-deck-btn {
+  font-size: 2vw;
+  min-width: 10vw;
+  margin-bottom: 0.5em;
+}
+.remaining-cards {
+  padding: 0.5em 1em;
+  background-color: rgb(15 23 42);
+  border-radius: 1em;
+  color: whitesmoke;
+}
+.get-new-deck-btn {
+  color: #171717;
+  background: linear-gradient(to left, #d97706, #f59e0b);
 }
 .draw-cards-btn {
   background-color: #c026d3;
@@ -70,12 +87,6 @@ body {
   width: 0;
   font-size: 0;
   background-color: inherit;
-}
-
-.get-new-deck-btn {
-  font-size: 2vw;
-  background-color: rgb(15 23 42);
-  color: silver;
 }
 
 .placeholder-card {
