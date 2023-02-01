@@ -1,7 +1,7 @@
 import { elements, displayActionArea } from "./DomElements.js";
 import { getCards, getNewDeck } from "./getNewDeck.js";
 import { getWinner } from "./getWinner.js";
-import { renderCards } from "./renderCards.js";
+import { renderCards, clearRenderedCards } from "./renderCards.js";
 import { renderWinner } from "./renderWinner.js";
 import { logIt, getJson } from "./utils.js";
 import renderRemainingCards from "./renderRemainingCards.js";
@@ -12,7 +12,8 @@ const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
     .then((jsonDeck) => (deck = jsonDeck))
-    .then(displayActionArea());
+    .then(displayActionArea())
+    .then(clearRenderedCards(elements.cardsContainer));
 // TODO Refactor this monstrosity
 const drawCardsHandler = () =>
   getCards(deck, cardsToBeDrawn)

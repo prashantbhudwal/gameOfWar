@@ -15,4 +15,9 @@ const renderCards = function renderCardImageOnScreen(cardsArray, element) {
   });
 };
 
-export { renderCards };
+const clearRenderedCards = function (element) {
+  element.innerHTML = `<div class="placeholder-card card"></div>
+      <div class="placeholder-card card"></div>`;
+};
+
+export { renderCards, clearRenderedCards };

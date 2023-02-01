@@ -12,6 +12,7 @@ elements.drawCardsBtn.style.display = "none";
 const displayActionArea = function () {
   elements.remainingCardsContainer.style.display = "block";
   elements.drawCardsBtn.style.display = "block";
+  elements.getDeckBtn.innerText = "Reshuffle";
 };
 
 export { elements, displayActionArea };
