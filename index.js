@@ -1,8 +1,4 @@
-import {
-  elements,
-  setDrawButton,
-  displayRemainingCards,
-} from "./DomElements.js";
+import { elements, displayActionArea } from "./DomElements.js";
 import { getCards, getNewDeck } from "./getNewDeck.js";
 import { getWinner } from "./getWinner.js";
 import { renderCards } from "./renderCards.js";
@@ -12,14 +8,11 @@ import renderRemainingCards from "./renderRemainingCards.js";
 const cardsToBeDrawn = 2;
 let deck;
 
-setDrawButton("disabled");
-
 const newDeckHandler = () =>
   getNewDeck()
     .then(getJson)
     .then((jsonDeck) => (deck = jsonDeck))
-    .then(setDrawButton("enabled"))
-    .then(displayRemainingCards());
+    .then(displayActionArea());
 // TODO Refactor this monstrosity
 const drawCardsHandler = () =>
   getCards(deck, cardsToBeDrawn)

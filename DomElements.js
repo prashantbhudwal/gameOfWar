@@ -6,17 +6,12 @@ const elements = {
   remainingCardsContainer: document.getElementById("remaining-cards"),
 };
 
-const setDrawButton = function (status) {
-  status === "enabled"
-    ? (elements.drawCardsBtn.disabled = false)
-    : status === "disabled"
-    ? (elements.drawCardsBtn.disabled = true)
-    : null;
-};
 elements.remainingCardsContainer.style.display = "none";
+elements.drawCardsBtn.style.display = "none";
 
-const displayRemainingCards = function () {
+const displayActionArea = function () {
   elements.remainingCardsContainer.style.display = "block";
+  elements.drawCardsBtn.style.display = "block";
 };
 
-export { elements, setDrawButton, displayRemainingCards };
+export { elements, displayActionArea };
