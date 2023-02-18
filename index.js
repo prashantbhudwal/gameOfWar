@@ -5,6 +5,7 @@ import { renderCards, clearRenderedCards } from "./renderCards.js";
 import { renderWinner } from "./renderWinner.js";
 import { logIt, getJson } from "./utils.js";
 import renderRemainingCards from "./renderRemainingCards.js";
+import renderUpdatedPlayerScore from "./renderUpdatedPlayerScore.js";
 const cardsToBeDrawn = 2;
 let deck;
 
@@ -17,6 +18,7 @@ const newDeckHandler = () =>
     )
     .then(startGame())
     .then(clearRenderedCards(elements.cardsContainer));
+
 // TODO Refactor this monstrosity
 const drawCardsHandler = () =>
   getCards(deck, cardsToBeDrawn)
@@ -27,7 +29,10 @@ const drawCardsHandler = () =>
       return drawnCardsJson.cards;
     })
     .then(getWinner)
-    .then((winner) => renderWinner(winner, elements.winContainer));
+    .then((winner) => {
+      renderWinner(winner, elements.winContainer);
+      renderUpdatedPlayerScore();
+    });
 
 elements.getDeckBtn.addEventListener("click", newDeckHandler);
 

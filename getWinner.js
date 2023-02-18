@@ -1,3 +1,5 @@
+import playerState from "./playerState.js";
+
 const getIntFromMatrix = function getValueFromConversionMatrix(value) {
   const conversionMatrix = {
     QUEEN: 12,
@@ -25,9 +27,19 @@ const compareCards = function (userCard, computerCard) {
     : "computer";
 };
 
+const updatePlayersState = function (winner) {
+  winner === "user"
+    ? (playerState.user += 1)
+    : winner === "computer"
+    ? (playerState.computer += 1)
+    : null;
+};
+
 const getWinner = function getWinningCard(cardsArray) {
   const [userCard, computerCard] = getIntegerArray(getValueArray(cardsArray));
   const winner = compareCards(userCard, computerCard);
+  updatePlayersState(winner);
+  console.log(playerState);
   return winner;
 };
 

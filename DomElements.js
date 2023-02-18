@@ -5,6 +5,8 @@ const elements = {
   winContainer: document.getElementById("win-container"),
   remainingCardsContainer: document.getElementById("remaining-cards"),
   messageBanner: document.getElementById("message-banner"),
+  userScore: document.getElementById("user-score"),
+  computerScore: document.getElementById("computer-score"),
 };
 
 elements.remainingCardsContainer.style.display = "none";
