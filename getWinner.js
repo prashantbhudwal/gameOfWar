@@ -39,7 +39,6 @@ const getWinner = function getWinningCard(cardsArray) {
   const [userCard, computerCard] = getIntegerArray(getValueArray(cardsArray));
   const winner = compareCards(userCard, computerCard);
   updatePlayersState(winner);
-  console.log(playerState);
   return winner;
 };
 
