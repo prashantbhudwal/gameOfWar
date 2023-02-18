@@ -1,11 +1,10 @@
-import playerState from "./playerState.js";
-import { elements } from "./DomElements.js";
+import renderEndGame from "./renderEndGame.js";
 
 const checkEndGame = function (cards) {
   console.log(cards);
   console.log(cards.remaining);
   cards.remaining === 0
-    ? (elements.winContainer.innerText = `EndGame You - ${playerState.user}`)
+    ? renderEndGame()
     : null;
 };
 

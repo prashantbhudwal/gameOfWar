@@ -1,4 +1,5 @@
 const elements = {
+  body: document.querySelector("body"),
   getDeckBtn: document.getElementById("get-new-deck-btn"),
   drawCardsBtn: document.getElementById("draw-cards-btn"),
   cardsContainer: document.getElementById("cards-container"),
