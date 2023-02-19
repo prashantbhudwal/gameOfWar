@@ -14,12 +14,10 @@ This is a guided project part of the Scrimba Frontend Path. The main objective o
 
 It is a basic app that lets you play a card game called war with the computer.
 
+# UpNext
 
-# TODOs
-- Store and render the score of the players
-- Decide and render winner of the game. 
-- Make the game responsive with variables and media queries
-
-
-# Bugs
-- A black bar at the bottom of the screen
+- Style the endGame Screen
+- Add audio
+- add basic animations
+  - the shadow behind the cards breathes
+- Make the game responsive, until then, show a no mobile layout message on the screen
